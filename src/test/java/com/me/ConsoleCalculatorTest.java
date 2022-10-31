@@ -2,7 +2,7 @@ package com.me;
 
 import junit.framework.TestCase;
 
-public class CalculatorTest extends TestCase {
+public class ConsoleCalculatorTest extends TestCase {
 
     public void setUp() throws Exception {
         super.setUp();

@@ -2,6 +2,16 @@ package com.me;
 
 public interface Calculator {
 
+    void getFirstNumber();
+
+    void getSecondNumber();
+
+    void getThirdNumber();
+
+    void choseFirstAction();
+
+    void choseSecondAction();
+
     void addition();
 
     void subtraction();
@@ -9,12 +19,6 @@ public interface Calculator {
     void multiply();
 
     void divide();
-
-    void getFirstNumber();
-
-    void getSecondNumber();
-
-    void getThirdNumber();
 
     void storeHistory(); //записывать все действия в стрингбилдер и потом выводить на экран
 
