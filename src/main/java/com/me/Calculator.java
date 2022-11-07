@@ -4,9 +4,9 @@ public interface Calculator {
 
     void getNumbers();
 
-    void choseActions();
+    Object choseActions();
 
-    void addition();
+    Object addition();
 
     void subtraction();
 

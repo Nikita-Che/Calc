@@ -6,41 +6,54 @@ package com.me;
   будет реализовывать только общий каркас и работать с объектами, опять же, потому что допускаемые принимаемые
   значения могут быть разными.
 */
+/*
+ для третьего числа можно добавить булевый метод который спросит "будешь делать еще действие?"
+*/
 public abstract class AbstractCalculator implements Calculator {
 
     @Override
     public void getNumbers() {
-        doGetNumbers(getFirstNumber(), getSecondNumber(), getThirdNumber());
+        doGetNumbers();
     }
 
-    protected abstract void doGetNumbers(Object firstNumber, Object secondNumber, Object thirdNumber);
+    protected abstract void doGetNumbers();
 
     protected abstract Object getFirstNumber();
 
     protected abstract Object getSecondNumber();
 
-    protected abstract Object getThirdNumber();
-
-
     @Override
-    public void choseActions() {
-        doAction();
+    public Object choseActions() {
+        return choseAction();
     }
 
-    protected abstract void doAction();
+    protected abstract Object choseAction();
 
     @Override
-    public void addition() {
-        choseFirstAction();
-        choseSecondAction();
-        doAddition();
+    public Object addition() {
+        return doAddition(getFirstNumber(),getSecondNumber());
     }
 
-    protected abstract void doAddition();
+    protected abstract Object doAddition(Object firstNumber, Object secondNumber);
 
-    protected abstract void choseFirstAction();
 
-    protected abstract void choseSecondAction();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void subtraction() {

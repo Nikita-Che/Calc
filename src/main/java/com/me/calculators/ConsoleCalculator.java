@@ -1,70 +1,52 @@
 package com.me.calculators;
 
 import com.me.AbstractCalculator;
-import com.me.exception.NotNumberException;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConsoleCalculator extends AbstractCalculator {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    int firstNumber;
-    int secondNumber;
-    int thirdNumber;
-    @Override
-    protected void doGetNumbers(Object firstNumber, Object secondNumber, Object thirdNumber) {
 
+    //убрать инициализацию после реализации методов
+    int firstNumber = 1;
+    int secondNumber = 1;
+    String firstAction = "";
+
+    @Override
+    protected void doGetNumbers() {
+        firstNumber = (int) getFirstNumber();
+        secondNumber = (int) getSecondNumber();
+        String chose = (String) choseAction();
+        switch (chose) {
+            case "+":
+                doAddition(firstNumber, secondNumber);
+        }
     }
 
     @Override
     protected Object getFirstNumber() {
-        return firstNumber;
+        //запросить от пользователя через консоль число и добавить проверки на ошибки
+        return firstNumber + 1;
     }
 
     @Override
     protected Object getSecondNumber() {
-        return secondNumber;
+        //запросить от пользователя через консоль число и добавить проверки на ошибки
+        return secondNumber + 1;
     }
 
     @Override
-    protected Object getThirdNumber() {
-        return thirdNumber;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Override
-    protected void doAction() {
-
+    protected Object choseAction() {
+        //запросить от пользователя через консоль знак и добавить проверки на ошибки
+        return firstAction = "+";
     }
 
     @Override
-    protected void doAddition() {
-
+    protected Object doAddition(Object firstNumber, Object secondNumber) {
+        return (int) firstNumber + (int) secondNumber;
     }
 
-    @Override
-    protected void choseFirstAction() {
-
-    }
-
-    @Override
-    protected void choseSecondAction() {
-
-    }
 
     @Override
     protected void doSubstraction() {
