@@ -1,4 +1,4 @@
 package com.me.exception;
 
-public class NotNumberException {
+public class NotNumberException extends Throwable {
 }

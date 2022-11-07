@@ -1,22 +1,26 @@
 package com.me;
 
+/*Так как калькуляторы могут быть разными, и реализация может быть разной,
+  и принимать он может все что угодно, в том числе и строки и даблы то всю проверку на правильность ввода,
+  а так же остальные ошибки буду спускать в непосредственную реализацию калькулятора. Абстрактный класс
+  будет реализовывать только общий каркас и работать с объектами, опять же, потому что допускаемые принимаемые
+  значения могут быть разными.
+*/
 public abstract class AbstractCalculator implements Calculator {
 
     @Override
     public void getNumbers() {
-        getFirstNumber();
-        getSecondNumber();
-        getThirdNumber();
-        doGetNumbers();
+        doGetNumbers(getFirstNumber(), getSecondNumber(), getThirdNumber());
     }
 
-    protected abstract void doGetNumbers();
+    protected abstract void doGetNumbers(Object firstNumber, Object secondNumber, Object thirdNumber);
 
-    abstract void getFirstNumber();
+    protected abstract Object getFirstNumber();
 
-    abstract void getSecondNumber();
+    protected abstract Object getSecondNumber();
 
-    abstract void getThirdNumber();
+    protected abstract Object getThirdNumber();
+
 
     @Override
     public void choseActions() {

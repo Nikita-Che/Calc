@@ -17,4 +17,6 @@ public interface Calculator {
     void sqrt();
 
     void storeHistory(); //записывать все действия в стрингбилдер и потом выводить на экран
+
+    void sayHello();
 }

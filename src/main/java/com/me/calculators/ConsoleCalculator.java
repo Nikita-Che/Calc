@@ -1,13 +1,96 @@
 package com.me.calculators;
 
 import com.me.AbstractCalculator;
+import com.me.exception.NotNumberException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public abstract class ConsoleCalculator extends AbstractCalculator { // TODO: 31.10.2022 убери абстракт и реализуй все методы
+public class ConsoleCalculator extends AbstractCalculator {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int firstNumber;
+    int secondNumber;
+    int thirdNumber;
+    @Override
+    protected void doGetNumbers(Object firstNumber, Object secondNumber, Object thirdNumber) {
 
+    }
+
+    @Override
+    protected Object getFirstNumber() {
+        return firstNumber;
+    }
+
+    @Override
+    protected Object getSecondNumber() {
+        return secondNumber;
+    }
+
+    @Override
+    protected Object getThirdNumber() {
+        return thirdNumber;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    protected void doAction() {
+
+    }
+
+    @Override
+    protected void doAddition() {
+
+    }
+
+    @Override
+    protected void choseFirstAction() {
+
+    }
+
+    @Override
+    protected void choseSecondAction() {
+
+    }
+
+    @Override
+    protected void doSubstraction() {
+
+    }
+
+    @Override
+    protected void doMultiply() {
+
+    }
+
+    @Override
+    protected void doDivide() {
+
+    }
+
+    @Override
+    protected void doSqrt() {
+
+    }
+
+
+    @Override
+    public void sayHello() {
+        System.out.println("Hello тебе разработчик");
+    }
 }
 
 
