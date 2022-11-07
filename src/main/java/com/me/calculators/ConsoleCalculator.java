@@ -14,14 +14,15 @@ public class ConsoleCalculator extends AbstractCalculator {
     String firstAction = "";
 
     @Override
-    protected void doGetNumbers() {
+    protected Object doGetNumbers() {
         firstNumber = (int) getFirstNumber();
         secondNumber = (int) getSecondNumber();
         String chose = (String) choseAction();
         switch (chose) {
             case "+":
-                doAddition(firstNumber, secondNumber);
+               doAddition(firstNumber, secondNumber);
         }
+        return null;
     }
 
     @Override

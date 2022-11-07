@@ -2,7 +2,7 @@ package com.me;
 
 public interface Calculator {
 
-    void getNumbers();
+    Object getNumbers();
 
     Object choseActions();
 

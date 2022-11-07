@@ -1,10 +1,12 @@
 package com.me.calculators;
 
+import com.me.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ConsoleCalculatorTest {
+    Calculator calculator = new ConsoleCalculator();
     int firstNumber = 1;
     int secondNumber = 2;
     String firstAction = "+";
@@ -16,7 +18,8 @@ class ConsoleCalculatorTest {
 
     @Test
     void doGetNumbers() {
-        Assertions.assertEquals(4, 4);
+        int a = (int) calculator.getNumbers();
+        Assertions.assertEquals(4, a);
     }
 
     @Test

@@ -12,11 +12,11 @@ package com.me;
 public abstract class AbstractCalculator implements Calculator {
 
     @Override
-    public void getNumbers() {
-        doGetNumbers();
+    public Object getNumbers() {
+        return doGetNumbers();
     }
 
-    protected abstract void doGetNumbers();
+    protected abstract Object doGetNumbers();
 
     protected abstract Object getFirstNumber();
 
