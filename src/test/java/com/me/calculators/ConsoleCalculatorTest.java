@@ -11,6 +11,7 @@ class ConsoleCalculatorTest {
     Calculator calculator = new ConsoleCalculator();
     int firstNumber = 1;
     int secondNumber = 0;
+
     String firstAction = "+";
 
     @BeforeEach
