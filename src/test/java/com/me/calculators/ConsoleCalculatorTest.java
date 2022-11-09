@@ -17,7 +17,7 @@ class ConsoleCalculatorTest {
 
     @Test
     void doGetNumbers() {
-        assertEquals(1, firstNumber );
+        assertEquals(1, firstNumber);
         assertEquals(1, secondNumber);
     }
 

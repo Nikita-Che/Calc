@@ -13,7 +13,7 @@ public abstract class AbstractCalculator implements Calculator {
 
     @Override
     public void getNumbers() {
-       doGetNumbers();
+        doGetNumbers();
     }
 
     protected abstract void doGetNumbers();
@@ -31,24 +31,6 @@ public abstract class AbstractCalculator implements Calculator {
     }
 
     protected abstract Object doAddition();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     @Override

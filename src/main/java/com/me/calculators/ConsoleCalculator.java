@@ -40,7 +40,6 @@ public class ConsoleCalculator extends AbstractCalculator {
             case "+":
                 doAddition();
         }
-
     }
 
     @Override
