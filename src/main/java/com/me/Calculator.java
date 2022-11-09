@@ -2,9 +2,9 @@ package com.me;
 
 public interface Calculator {
 
-    Object getNumbers();
+    void getNumbers();
 
-    Object choseActions();
+    void choseActions();
 
     Object addition();
 

@@ -12,29 +12,25 @@ package com.me;
 public abstract class AbstractCalculator implements Calculator {
 
     @Override
-    public Object getNumbers() {
-        return doGetNumbers();
+    public void getNumbers() {
+       doGetNumbers();
     }
 
-    protected abstract Object doGetNumbers();
-
-    protected abstract Object getFirstNumber();
-
-    protected abstract Object getSecondNumber();
+    protected abstract void doGetNumbers();
 
     @Override
-    public Object choseActions() {
-        return choseAction();
+    public void choseActions() {
+        choseCalculatorAction();
     }
 
-    protected abstract Object choseAction();
+    protected abstract void choseCalculatorAction();
 
     @Override
     public Object addition() {
-        return doAddition(getFirstNumber(),getSecondNumber());
+        return doAddition();
     }
 
-    protected abstract Object doAddition(Object firstNumber, Object secondNumber);
+    protected abstract Object doAddition();
 
 
 

@@ -5,21 +5,24 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class ConsoleCalculatorTest {
     Calculator calculator = new ConsoleCalculator();
     int firstNumber = 1;
-    int secondNumber = 2;
+    int secondNumber = 0;
     String firstAction = "+";
 
     @BeforeEach
     void setUp() {
-
+        doGetNumbers();
     }
 
     @Test
     void doGetNumbers() {
-        int a = (int) calculator.getNumbers();
-        Assertions.assertEquals(4, a);
+        calculator.getNumbers();
+        assertEquals(1, firstNumber);
+        assertEquals(1, secondNumber);
     }
 
     @Test
@@ -36,7 +39,7 @@ class ConsoleCalculatorTest {
 
     @Test
     void doAddition() {
-        Assertions.assertEquals(4, 4);
+        assertEquals(4, 4);
     }
 
     @Test

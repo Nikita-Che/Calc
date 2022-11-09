@@ -9,44 +9,49 @@ public class ConsoleCalculator extends AbstractCalculator {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     //убрать инициализацию после реализации методов
-    int firstNumber = 1;
-    int secondNumber = 1;
+    int firstNumber = 0;
+    int secondNumber = 0;
     String firstAction = "";
 
     @Override
-    protected Object doGetNumbers() {
-        firstNumber = (int) getFirstNumber();
-        secondNumber = (int) getSecondNumber();
-        String chose = (String) choseAction();
-        switch (chose) {
-            case "+":
-               doAddition(firstNumber, secondNumber);
-        }
-        return null;
+    protected void doGetNumbers() {
+        firstNumber = getFirstNumber();
+        secondNumber = getSecondNumber();
     }
 
-    @Override
-    protected Object getFirstNumber() {
+    protected int getFirstNumber() {
         //запросить от пользователя через консоль число и добавить проверки на ошибки
-        return firstNumber + 1;
+        firstNumber++;
+        return firstNumber;
     }
 
-    @Override
-    protected Object getSecondNumber() {
+    protected int getSecondNumber() {
         //запросить от пользователя через консоль число и добавить проверки на ошибки
-        return secondNumber + 1;
+        secondNumber++;
+        return secondNumber;
     }
 
     @Override
-    protected Object choseAction() {
+    protected void choseCalculatorAction() {
         //запросить от пользователя через консоль знак и добавить проверки на ошибки
-        return firstAction = "+";
+        firstAction = "+";
+
+        switch (firstAction) {
+            case "+":
+                doAddition();
+        }
+
     }
 
     @Override
-    protected Object doAddition(Object firstNumber, Object secondNumber) {
-        return (int) firstNumber + (int) secondNumber;
+    protected Object doAddition() {
+        return firstNumber + secondNumber;
     }
+
+
+
+
+
 
 
     @Override
