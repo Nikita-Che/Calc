@@ -9,8 +9,8 @@ public class ConsoleCalculator extends AbstractCalculator {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     //убрать инициализацию после реализации методов
-    int firstNumber = 0;
-    int secondNumber = 0;
+    public static int firstNumber = 0;
+    public static int secondNumber = 0;
     String firstAction = "";
 
     @Override
@@ -47,11 +47,6 @@ public class ConsoleCalculator extends AbstractCalculator {
     protected Object doAddition() {
         return firstNumber + secondNumber;
     }
-
-
-
-
-
 
 
     @Override

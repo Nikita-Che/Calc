@@ -1,28 +1,23 @@
 package com.me.calculators;
 
 import com.me.Calculator;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static com.me.calculators.ConsoleCalculator.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConsoleCalculatorTest {
     Calculator calculator = new ConsoleCalculator();
-    int firstNumber = 1;
-    int secondNumber = 0;
-
-    String firstAction = "+";
 
     @BeforeEach
     void setUp() {
-        doGetNumbers();
+        calculator.getNumbers();
     }
 
     @Test
     void doGetNumbers() {
-        calculator.getNumbers();
-        assertEquals(1, firstNumber);
+        assertEquals(1, firstNumber );
         assertEquals(1, secondNumber);
     }
 
