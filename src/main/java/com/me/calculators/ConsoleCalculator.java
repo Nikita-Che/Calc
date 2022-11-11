@@ -11,7 +11,7 @@ public class ConsoleCalculator extends AbstractCalculator {
     //убрать инициализацию после реализации методов
     public static int firstNumber = 0;
     public static int secondNumber = 0;
-    String firstAction = "";
+    public static String firstAction = "";
 
     @Override
     protected void doGetNumbers() {
@@ -59,8 +59,8 @@ public class ConsoleCalculator extends AbstractCalculator {
     }
 
     @Override
-    protected void doDivide() {
-
+    protected Object doDivide() {
+        return firstNumber / secondNumber;
     }
 
     @Override
@@ -70,8 +70,9 @@ public class ConsoleCalculator extends AbstractCalculator {
 
 
     @Override
-    public void sayHello() {
+    public String sayHello() {
         System.out.println("Hello тебе разработчик");
+        return "Hello тебе разработчик";
     }
 }
 

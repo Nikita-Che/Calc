@@ -12,11 +12,11 @@ public interface Calculator {
 
     void multiply();
 
-    void divide();
+    Object divide();
 
     void sqrt();
 
     void storeHistory(); //записывать все действия в стрингбилдер и потом выводить на экран
 
-    void sayHello();
+    String sayHello();
 }

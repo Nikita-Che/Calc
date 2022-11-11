@@ -48,11 +48,11 @@ public abstract class AbstractCalculator implements Calculator {
     protected abstract void doMultiply();
 
     @Override
-    public void divide() {
-        doDivide();
+    public Object divide() {
+        return doDivide();
     }
 
-    protected abstract void doDivide();
+    protected abstract Object doDivide();
 
     @Override
     public void sqrt() {

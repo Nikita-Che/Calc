@@ -9,10 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConsoleCalculatorTest {
     Calculator calculator = new ConsoleCalculator();
+    String hello = calculator.sayHello();
 
     @BeforeEach
     void setUp() {
-        calculator.getTwoNumbers();
+        firstNumber = 1;
+        secondNumber = 1;
+        firstAction = "+";
     }
 
     @Test
@@ -33,6 +36,7 @@ class ConsoleCalculatorTest {
 
     @Test
     void choseAction() {
+        assertEquals("+", firstAction);
         //передать сюда разные + - / * и проверить на то что правильно передается
     }
 
@@ -55,6 +59,10 @@ class ConsoleCalculatorTest {
 
     @Test
     void doDivide() {
+        firstNumber = 10;
+        secondNumber = 2;
+        int expected = (int) calculator.divide();
+        assertEquals(expected, 5);
     }
 
     @Test
@@ -63,6 +71,7 @@ class ConsoleCalculatorTest {
 
     @Test
     void sayHello() {
+        assertEquals("Hello тебе разработчик", hello);
     }
 }
 
