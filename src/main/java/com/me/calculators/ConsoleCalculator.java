@@ -49,13 +49,13 @@ public class ConsoleCalculator extends AbstractCalculator {
 
 
     @Override
-    protected void doSubstraction() {
-
+    protected int doSubstraction() {
+        return firstNumber - secondNumber;
     }
 
     @Override
-    protected void doMultiply() {
-
+    protected int doMultiply() {
+        return firstNumber * secondNumber;
     }
 
     @Override
@@ -71,7 +71,6 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     @Override
     public String sayHello() {
-        System.out.println("Hello тебе разработчик");
         return "Hello тебе разработчик";
     }
 }

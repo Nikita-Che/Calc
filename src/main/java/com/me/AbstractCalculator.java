@@ -34,18 +34,18 @@ public abstract class AbstractCalculator implements Calculator {
 
 
     @Override
-    public void subtraction() {
-        doSubstraction();
+    public int subtraction() {
+        return doSubstraction();
     }
 
-    protected abstract void doSubstraction();
+    protected abstract int doSubstraction();
 
     @Override
-    public void multiply() {
-        doMultiply();
+    public int multiply() {
+        return doMultiply();
     }
 
-    protected abstract void doMultiply();
+    protected abstract int doMultiply();
 
     @Override
     public Object divide() {

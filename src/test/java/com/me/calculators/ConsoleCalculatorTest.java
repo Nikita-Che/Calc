@@ -13,25 +13,25 @@ class ConsoleCalculatorTest {
 
     @BeforeEach
     void setUp() {
-        firstNumber = 1;
-        secondNumber = 1;
+        firstNumber = 10;
+        secondNumber = 2;
         firstAction = "+";
     }
 
     @Test
     void doGetNumbers() {
-        assertEquals(1, firstNumber);
-        assertEquals(1, secondNumber);
+        assertEquals(10, firstNumber);
+        assertEquals(2, secondNumber);
     }
 
     @Test
     void getFirstNumber() {
-        assertEquals(1, firstNumber);
+        assertEquals(10, firstNumber);
     }
 
     @Test
     void getSecondNumber() {
-        assertEquals(1, secondNumber);
+        assertEquals(2, secondNumber);
     }
 
     @Test
@@ -44,23 +44,24 @@ class ConsoleCalculatorTest {
     void doAddition() {
 //        calculator.getTwoNumbers();
         int expected = (int) calculator.addition();
-        assertEquals(expected, 2);
+        assertEquals(expected, 12);
     }
 
     @Test
     void doSubstraction() {
-
+        int expected = calculator.subtraction();
+        assertEquals(expected, 8);
         //поделить на ноль и проверить упадет ли
     }
 
     @Test
     void doMultiply() {
+        int expected = calculator.multiply();
+        assertEquals(expected, 20);
     }
 
     @Test
     void doDivide() {
-        firstNumber = 10;
-        secondNumber = 2;
         int expected = (int) calculator.divide();
         assertEquals(expected, 5);
     }

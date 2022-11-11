@@ -8,9 +8,9 @@ public interface Calculator {
 
     Object addition();
 
-    void subtraction();
+    int subtraction();
 
-    void multiply();
+    int multiply();
 
     Object divide();
 
