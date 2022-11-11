@@ -9,13 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConsoleCalculatorTest {
     Calculator calculator = new ConsoleCalculator();
-    String hello = calculator.sayHello();
+    String hello = (String) calculator.sayHello();
 
     @BeforeEach
     void setUp() {
         firstNumber = 10;
         secondNumber = 2;
         firstAction = "+";
+        sqrtNumber = 4.0;
     }
 
     @Test
@@ -49,14 +50,14 @@ class ConsoleCalculatorTest {
 
     @Test
     void doSubstraction() {
-        int expected = calculator.subtraction();
+        int expected = (int) calculator.subtraction();
         assertEquals(expected, 8);
         //поделить на ноль и проверить упадет ли
     }
 
     @Test
     void doMultiply() {
-        int expected = calculator.multiply();
+        int expected = (int) calculator.multiply();
         assertEquals(expected, 20);
     }
 
@@ -68,6 +69,8 @@ class ConsoleCalculatorTest {
 
     @Test
     void doSqrt() {
+        double expected = (double) calculator.sqrt();
+        assertEquals(expected,2.0);
     }
 
     @Test

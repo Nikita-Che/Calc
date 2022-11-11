@@ -8,5 +8,6 @@ public class Main {
         calculator.sayHello();
         //задать вопрос сколько будет чисел?
         calculator.getTwoNumbers();
+        System.out.println(Math.sqrt(4));
     }
 }

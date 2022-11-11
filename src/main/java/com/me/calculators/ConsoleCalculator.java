@@ -12,6 +12,7 @@ public class ConsoleCalculator extends AbstractCalculator {
     public static int firstNumber = 0;
     public static int secondNumber = 0;
     public static String firstAction = "";
+    public static double sqrtNumber = 0.0;
 
     @Override
     protected void doGetNumbers() {
@@ -64,8 +65,8 @@ public class ConsoleCalculator extends AbstractCalculator {
     }
 
     @Override
-    protected void doSqrt() {
-
+    protected double doSqrt() {
+        return Math.sqrt(sqrtNumber);
     }
 
 

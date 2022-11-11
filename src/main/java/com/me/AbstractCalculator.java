@@ -34,14 +34,14 @@ public abstract class AbstractCalculator implements Calculator {
 
 
     @Override
-    public int subtraction() {
+    public Object subtraction() {
         return doSubstraction();
     }
 
     protected abstract int doSubstraction();
 
     @Override
-    public int multiply() {
+    public Object multiply() {
         return doMultiply();
     }
 
@@ -55,14 +55,11 @@ public abstract class AbstractCalculator implements Calculator {
     protected abstract Object doDivide();
 
     @Override
-    public void sqrt() {
-        doSqrt();
-        // public double Koren(double a)
-        //        {
-        //         return Math.Sqrt(a);
+    public Object sqrt() {
+        return  doSqrt();
     }
 
-    protected abstract void doSqrt();
+    protected abstract double doSqrt();
 
     @Override
     public void storeHistory() {

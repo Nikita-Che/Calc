@@ -8,15 +8,15 @@ public interface Calculator {
 
     Object addition();
 
-    int subtraction();
+    Object subtraction();
 
-    int multiply();
+    Object multiply();
 
     Object divide();
 
-    void sqrt();
+    Object sqrt();
 
     void storeHistory(); //записывать все действия в стрингбилдер и потом выводить на экран
 
-    String sayHello();
+    Object sayHello();
 }
