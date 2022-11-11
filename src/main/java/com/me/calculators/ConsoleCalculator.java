@@ -1,8 +1,10 @@
 package com.me.calculators;
 
 import com.me.AbstractCalculator;
+import com.me.exception.NotNumberException;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConsoleCalculator extends AbstractCalculator {
@@ -14,19 +16,31 @@ public class ConsoleCalculator extends AbstractCalculator {
     public static String firstAction = "";
     public static double sqrtNumber = 0.0;
 
-    @Override
-    protected void doGetNumbers() {
-        getFirstNumber();
-        getSecondNumber();
-    }
+//    @Override
+//    protected void doGetNumbers() {
+//        getFirstNumber();
+//        getSecondNumber();
+//    }
 
-    protected int getFirstNumber() {
+    @Override
+    public int getFirstNumber() {
+        System.out.println("Please Enter first Number");
+        try {
+            String number = reader.readLine();
+            if (number.matches("[0-9]*")) {
+                firstNumber = Integer.parseInt(number);
+            } else {
+                throw new NotNumberException();
+            }
+        } catch (IOException | NotNumberException e) {
+            e.printStackTrace();
+        }
         //запросить от пользователя через консоль число и добавить проверки на ошибки
-        firstNumber++;
+
         return firstNumber;
     }
 
-    protected int getSecondNumber() {
+    public int getSecondNumber() {
         //запросить от пользователя через консоль число и добавить проверки на ошибки
         secondNumber++;
         return secondNumber;
@@ -47,7 +61,6 @@ public class ConsoleCalculator extends AbstractCalculator {
     protected Object doAddition() {
         return firstNumber + secondNumber;
     }
-
 
     @Override
     protected int doSubstraction() {

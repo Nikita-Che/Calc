@@ -8,8 +8,10 @@ import static com.me.calculators.ConsoleCalculator.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class AbstractCalculatorTest {
-    private  final Calculator calculator;
+    private final Calculator calculator;
     String hello;
+    String firstFalseNumber = "qqwe123";
+    int zeroDivizion = 0;
 
     protected AbstractCalculatorTest(Calculator calculator) {
         this.calculator = calculator;
@@ -24,11 +26,11 @@ public abstract class AbstractCalculatorTest {
         sqrtNumber = 4.0;
     }
 
-    @Test
-    void doGetNumbers() {
-        assertEquals(10, firstNumber);
-        assertEquals(2, secondNumber);
-    }
+//    @Test
+//    void doGetNumbers() {
+//        assertEquals(10, firstNumber);
+//        assertEquals(2, secondNumber);
+//    }
 
     @Test
     void getFirstNumber() {
@@ -69,12 +71,13 @@ public abstract class AbstractCalculatorTest {
     void doDivide() {
         int expected = (int) calculator.divide();
         assertEquals(expected, 5);
+        //поделить на ноль и проверить упадет ли
     }
 
     @Test
     void doSqrt() {
         double expected = (double) calculator.sqrt();
-        assertEquals(expected,2.0);
+        assertEquals(expected, 2.0);
     }
 
     @Test

@@ -11,58 +11,57 @@ package com.me;
 */
 public abstract class AbstractCalculator implements Calculator {
 
-    @Override
-    public void getTwoNumbers() {
-        doGetNumbers();
-    }
-
-    protected abstract void doGetNumbers();
+//    @Override
+//    public void getTwoNumbers() {
+//        doGetNumbers();
+//    }
 
     @Override
     public void choseActions() {
         choseFirstCalculatorAction();
     }
 
-    protected abstract void choseFirstCalculatorAction();
-
     @Override
     public Object addition() {
         return doAddition();
     }
-
-    protected abstract Object doAddition();
-
 
     @Override
     public Object subtraction() {
         return doSubstraction();
     }
 
-    protected abstract int doSubstraction();
-
     @Override
     public Object multiply() {
         return doMultiply();
     }
-
-    protected abstract int doMultiply();
 
     @Override
     public Object divide() {
         return doDivide();
     }
 
-    protected abstract Object doDivide();
-
     @Override
     public Object sqrt() {
-        return  doSqrt();
+        return doSqrt();
     }
-
-    protected abstract double doSqrt();
 
     @Override
     public void storeHistory() {
 
     }
+
+    protected abstract Object doAddition();
+
+    protected abstract Object doDivide();
+
+    protected abstract void choseFirstCalculatorAction();
+
+//    protected abstract void doGetNumbers();
+
+    protected abstract int doSubstraction();
+
+    protected abstract double doSqrt();
+
+    protected abstract int doMultiply();
 }
