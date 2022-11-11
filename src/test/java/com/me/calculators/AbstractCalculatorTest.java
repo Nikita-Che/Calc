@@ -27,11 +27,11 @@ public abstract class AbstractCalculatorTest {
         sqrtNumber = 4.0;
     }
 
-//    @Test
-//    void doGetNumbers() {
-//        assertEquals(10, firstNumber);
-//        assertEquals(2, secondNumber);
-//    }
+    @Test
+    void doGetNumbers() {
+        assertEquals(10, firstNumber);
+        assertEquals(2, secondNumber);
+    }
 
     @Test
     void getFirstNumber() {
@@ -54,7 +54,7 @@ public abstract class AbstractCalculatorTest {
     @Test
     void choseAction() {
         assertEquals("+", action);
-        //передать сюда разные + - / * и проверить на то что правильно передается
+        // TODO: 12.11.2022 передать сюда разные + - / * и проверить на то что правильно передается
     }
 
     @Test
@@ -80,7 +80,6 @@ public abstract class AbstractCalculatorTest {
     void doDivide() {
         int expected = (int) calculator.divide();
         assertEquals(expected, 5);
-        //поделить на ноль и проверить упадет ли
     }
 
     @Test
