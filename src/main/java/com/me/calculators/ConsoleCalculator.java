@@ -21,8 +21,15 @@ public class ConsoleCalculator extends AbstractCalculator {
     protected void doGetNumbers() {
         /*сколько будет чисел?
         Если будет 2 числа то гетФёрст гетСеконд
-        Если будет 3 числа то первое и второе считается и превращается
-        в первое и потом снова первое и второе
+        Какой знак будет между 1 и 2?
+        выполняем
+
+        Если будет 3 числа то гетФёрст гетСеконд
+        Какой знак будет между 1 и 2?
+        выполняем
+        Какое будет 3 число?
+        какой знак будет ?
+        результат первого считаем с 3м
 
          */
 
@@ -47,8 +54,15 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     }
 
+    private void getNumberFromUserConsole() {
+
+    }
+
     public int getFirstNumber() {
         System.out.println("Please Enter first Number");
+
+        getNumberFromUserConsole();
+
         try {
             String number = reader.readLine();
             if (number.matches("[0-9]*")) {
