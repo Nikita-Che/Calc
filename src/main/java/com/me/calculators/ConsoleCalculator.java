@@ -32,6 +32,7 @@ public class ConsoleCalculator extends AbstractCalculator {
                     getFirstNumber();
                     getSecondNumber();
                     doChoseAction();
+                    // TODO: 12.11.2022 поправить
                     /*
                     не понятно как тут сделать логику без дубляжа
                     по сути нужен буферный int который будет хранить результат первого вычисления
@@ -76,6 +77,8 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     @Override
     protected void doChoseAction() {
+        System.out.println("What action will be?");
+        // TODO: 12.11.2022 метод не рабочий. валиться. надо оптимизировать
         getActionFromUserConsole();
         switch (action) {
             case "+":
@@ -92,11 +95,17 @@ public class ConsoleCalculator extends AbstractCalculator {
     }
 
     private void getActionFromUserConsole() {
-        String action = "";
         try {
             String bufaction = reader.readLine();
-            if ("+-/*".matches(bufaction)) {
-                action = bufaction;
+            switch (bufaction) {
+                case "+":
+                    action = "+";
+                case "*":
+                    action = "*";
+                case "/":
+                    action = "/";
+                case "-":
+                    action = "-";
             }
         } catch (IOException | WrongSignException e) {
             e.printStackTrace();
@@ -105,6 +114,7 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     @Override
     protected Object doAddition() {
+        System.out.println(firstNumber + secondNumber);
         return firstNumber + secondNumber;
     }
 
@@ -125,7 +135,8 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     @Override
     protected double doSqrt() {
-        System.out.println(" Please entre DOUBLE number"); //вынесит выше. тут только ретУрн
+        // TODO: 12.11.2022  вынести выше. тут только ретУрн. тесты падают
+        System.out.println(" Please entre DOUBLE number");
         sqrtNumber = getNumberFromUserConsole();
         return Math.sqrt(sqrtNumber);
     }
@@ -135,7 +146,6 @@ public class ConsoleCalculator extends AbstractCalculator {
         return "Hello тебе разработчик";
     }
 }
-
 
 //    private final static ArrayStorage ARRAY_STORAGE = new ArrayStorage();
 //
