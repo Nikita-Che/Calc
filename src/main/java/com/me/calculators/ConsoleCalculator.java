@@ -10,30 +10,16 @@ import java.io.InputStreamReader;
 
 public class ConsoleCalculator extends AbstractCalculator {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-    //убрать инициализацию после реализации методов
     public static int firstNumber = 0;
     public static int secondNumber = 0;
     public static int thirdNumber = 0;
-    public static String firstAction = "";
+    public static int bufResult = 0;
+    public static String action = "";
+    public static String secondAction = "";
     public static double sqrtNumber = 0.0;
 
     @Override
     protected void doGetNumbers() {
-        /*сколько будет чисел?
-        Если будет 2 числа то гетФёрст гетСеконд
-        Какой знак будет между 1 и 2?
-        выполняем
-
-        Если будет 3 числа то гетФёрст гетСеконд
-        Какой знак будет между 1 и 2?
-        выполняем
-        Какое будет 3 число?
-        какой знак будет ?
-        результат первого считаем с 3м
-
-         */
-
         System.out.println("Skolko budet Chisel a ept?");
         try {
             int count = Integer.parseInt(reader.readLine());
@@ -41,18 +27,38 @@ public class ConsoleCalculator extends AbstractCalculator {
                 case 2:
                     getFirstNumber();
                     getSecondNumber();
+                    doChoseAction();
                 case 3:
                     getFirstNumber();
                     getSecondNumber();
+                    doChoseAction();
+                    /*
+                    не понятно как тут сделать логику без дубляжа
+                    по сути нужен буферный int который будет хранить результат первого вычисления
+                    но все методы работают только с 2мя числами. Значит видимо надо вынести числа в параметры
+                    и в зависитмости от того 2 или 3 числа выбраны в расчет уже передавать 1 и 2 иди буфер и 3
+                    */
                     getThirdNumber();
+                    doChoseAction();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        getFirstNumber();
-        getSecondNumber();
+    public void getFirstNumber() {
+        System.out.println("Please Enter first Number");
+        firstNumber = getNumberFromUserConsole();
+    }
 
+    public void getSecondNumber() {
+        System.out.println("Please Enter second Number");
+        secondNumber = getNumberFromUserConsole();
+    }
+
+    private void getThirdNumber() {
+        System.out.println("Please Enter third Number");
+        thirdNumber = getNumberFromUserConsole();
     }
 
     private int getNumberFromUserConsole() {
@@ -68,40 +74,10 @@ public class ConsoleCalculator extends AbstractCalculator {
         return number;
     }
 
-    public void getFirstNumber() {
-        System.out.println("Please Enter first Number");
-        firstNumber = getNumberFromUserConsole();
-    }
-
-    public void getSecondNumber() {
-        System.out.println("Please Enter second Number");
-        secondNumber = getNumberFromUserConsole();
-    }
-
-    private void getThirdNumber() {
-        System.out.println("Please Enter second Number");
-        thirdNumber = getNumberFromUserConsole();
-    }
-
-    private String getActionFromUserConsole() {
-        String action = "";
-        try {
-            String bufaction = reader.readLine();
-            if ("+-/*".matches(bufaction)) {
-                action = bufaction;
-            }
-        } catch (IOException | WrongSignException e) {
-            e.printStackTrace();
-        }
-        return action;
-    }
-
     @Override
     protected void doChoseAction() {
-        //запросить от пользователя через консоль знак и добавить проверки на ошибки
-        firstAction = "+";
-
-        switch (firstAction) {
+        getActionFromUserConsole();
+        switch (action) {
             case "+":
                 doAddition();
             case "-":
@@ -112,6 +88,18 @@ public class ConsoleCalculator extends AbstractCalculator {
                 doDivide();
             case "koren":
                 doSqrt();
+        }
+    }
+
+    private void getActionFromUserConsole() {
+        String action = "";
+        try {
+            String bufaction = reader.readLine();
+            if ("+-/*".matches(bufaction)) {
+                action = bufaction;
+            }
+        } catch (IOException | WrongSignException e) {
+            e.printStackTrace();
         }
     }
 

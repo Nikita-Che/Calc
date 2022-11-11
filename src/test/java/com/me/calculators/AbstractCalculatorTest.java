@@ -23,7 +23,7 @@ public abstract class AbstractCalculatorTest {
     void setUp() {
         firstNumber = 10;
         secondNumber = 2;
-        firstAction = "+";
+        action = "+";
         sqrtNumber = 4.0;
     }
 
@@ -53,7 +53,7 @@ public abstract class AbstractCalculatorTest {
 
     @Test
     void choseAction() {
-        assertEquals("+", firstAction);
+        assertEquals("+", action);
         //передать сюда разные + - / * и проверить на то что правильно передается
     }
 
@@ -91,11 +91,11 @@ public abstract class AbstractCalculatorTest {
         });
     }
 
-    @Test
-    void doSqrt() {
-        double expected = (double) calculator.sqrt();
-        assertEquals(expected, 2.0);
-    }
+//    @Test
+//    void doSqrt() {
+//        double expected = (double) calculator.sqrt();
+//        assertEquals(expected, 2.0);
+//    }
 
     @Test
     void sayHello() {
