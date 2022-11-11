@@ -54,37 +54,32 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     }
 
-    private void getNumberFromUserConsole() {
-
-    }
-
-    public int getFirstNumber() {
-        System.out.println("Please Enter first Number");
-
-        getNumberFromUserConsole();
-
+    private int getNumberFromUserConsole() {
+        int number = 0;
         try {
-            String number = reader.readLine();
-            if (number.matches("[0-9]*")) {
-                firstNumber = Integer.parseInt(number);
-            } else {
-                throw new NotNumberException();
+            String buffnumber = reader.readLine();
+            if (buffnumber.matches("[0-9]*]")) {
+                number = Integer.parseInt(buffnumber);
             }
         } catch (IOException | NotNumberException e) {
             e.printStackTrace();
         }
-        //запросить от пользователя через консоль число и добавить проверки на ошибки
-
-        return firstNumber;
+        return number;
     }
 
-    public int getSecondNumber() {
-        //запросить от пользователя через консоль число и добавить проверки на ошибки
-        secondNumber++;
-        return secondNumber;
+    public void getFirstNumber() {
+        System.out.println("Please Enter first Number");
+        firstNumber = getNumberFromUserConsole();
+    }
+
+    public void getSecondNumber() {
+        System.out.println("Please Enter second Number");
+        secondNumber = getNumberFromUserConsole();
     }
 
     private void getThirdNumber() {
+        System.out.println("Please Enter second Number");
+        thirdNumber = getNumberFromUserConsole();
     }
 
     @Override
