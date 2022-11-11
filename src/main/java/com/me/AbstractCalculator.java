@@ -18,13 +18,9 @@ public abstract class AbstractCalculator implements Calculator {
 
     protected abstract void doGetNumbers();
 
-
-
-
-
     @Override
     public void choseActions() {
-        choseFirstCalculatorAction();
+        doChoseAction();
     }
 
     @Override
@@ -34,7 +30,7 @@ public abstract class AbstractCalculator implements Calculator {
 
     @Override
     public Object subtraction() {
-        return doSubstraction();
+        return doSubtraction();
     }
 
     @Override
@@ -61,9 +57,9 @@ public abstract class AbstractCalculator implements Calculator {
 
     protected abstract Object doDivide();
 
-    protected abstract void choseFirstCalculatorAction();
+    protected abstract void doChoseAction();
 
-    protected abstract int doSubstraction();
+    protected abstract int doSubtraction();
 
     protected abstract double doSqrt();
 

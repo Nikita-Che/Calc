@@ -2,6 +2,7 @@ package com.me.calculators;
 
 import com.me.AbstractCalculator;
 import com.me.exception.NotNumberException;
+import com.me.exception.WrongSignException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -82,14 +83,35 @@ public class ConsoleCalculator extends AbstractCalculator {
         thirdNumber = getNumberFromUserConsole();
     }
 
+    private String getActionFromUserConsole() {
+        String action = "";
+        try {
+            String bufaction = reader.readLine();
+            if ("+-/*".matches(bufaction)) {
+                action = bufaction;
+            }
+        } catch (IOException | WrongSignException e) {
+            e.printStackTrace();
+        }
+        return action;
+    }
+
     @Override
-    protected void choseFirstCalculatorAction() {
+    protected void doChoseAction() {
         //запросить от пользователя через консоль знак и добавить проверки на ошибки
         firstAction = "+";
 
         switch (firstAction) {
             case "+":
                 doAddition();
+            case "-":
+                doSubtraction();
+            case "*":
+                doMultiply();
+            case "/":
+                doDivide();
+            case "koren":
+                doSqrt();
         }
     }
 
@@ -99,7 +121,7 @@ public class ConsoleCalculator extends AbstractCalculator {
     }
 
     @Override
-    protected int doSubstraction() {
+    protected int doSubtraction() {
         return firstNumber - secondNumber;
     }
 
@@ -115,9 +137,10 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     @Override
     protected double doSqrt() {
+        System.out.println(" Please entre DOUBLE number"); //вынесит выше. тут только ретУрн
+        sqrtNumber = getNumberFromUserConsole();
         return Math.sqrt(sqrtNumber);
     }
-
 
     @Override
     public String sayHello() {
