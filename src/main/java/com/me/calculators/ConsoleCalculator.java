@@ -13,16 +13,40 @@ public class ConsoleCalculator extends AbstractCalculator {
     //убрать инициализацию после реализации методов
     public static int firstNumber = 0;
     public static int secondNumber = 0;
+    public static int thirdNumber = 0;
     public static String firstAction = "";
     public static double sqrtNumber = 0.0;
 
-//    @Override
-//    protected void doGetNumbers() {
-//        getFirstNumber();
-//        getSecondNumber();
-//    }
-
     @Override
+    protected void doGetNumbers() {
+        /*сколько будет чисел?
+        Если будет 2 числа то гетФёрст гетСеконд
+        Если будет 3 числа то первое и второе считается и превращается
+        в первое и потом снова первое и второе
+
+         */
+
+        System.out.println("Skolko budet Chisel a ept?");
+        try {
+            int count = Integer.parseInt(reader.readLine());
+            switch (count) {
+                case 2:
+                    getFirstNumber();
+                    getSecondNumber();
+                case 3:
+                    getFirstNumber();
+                    getSecondNumber();
+                    getThirdNumber();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        getFirstNumber();
+        getSecondNumber();
+
+    }
+
     public int getFirstNumber() {
         System.out.println("Please Enter first Number");
         try {
@@ -44,6 +68,9 @@ public class ConsoleCalculator extends AbstractCalculator {
         //запросить от пользователя через консоль число и добавить проверки на ошибки
         secondNumber++;
         return secondNumber;
+    }
+
+    private void getThirdNumber() {
     }
 
     @Override

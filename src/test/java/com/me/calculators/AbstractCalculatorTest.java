@@ -1,6 +1,7 @@
 package com.me.calculators;
 
 import com.me.Calculator;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,6 +39,14 @@ public abstract class AbstractCalculatorTest {
     }
 
     @Test
+    void notNumberFirstNumberException() {
+        Assertions.assertThrows(NumberFormatException.class, () -> {
+            firstNumber = Integer.parseInt(firstFalseNumber);
+            getFirstNumber();
+        });
+    }
+
+    @Test
     void getSecondNumber() {
         assertEquals(2, secondNumber);
     }
@@ -72,6 +81,14 @@ public abstract class AbstractCalculatorTest {
         int expected = (int) calculator.divide();
         assertEquals(expected, 5);
         //поделить на ноль и проверить упадет ли
+    }
+
+    @Test
+    void divideByZEro() {
+        Assertions.assertThrows(ArithmeticException.class, () -> {
+            secondNumber = zeroDivizion;
+            doDivide();
+        });
     }
 
     @Test

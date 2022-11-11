@@ -11,10 +11,16 @@ package com.me;
 */
 public abstract class AbstractCalculator implements Calculator {
 
-//    @Override
-//    public void getTwoNumbers() {
-//        doGetNumbers();
-//    }
+    @Override
+    public void getNumbers() {
+        doGetNumbers();
+    }
+
+    protected abstract void doGetNumbers();
+
+
+
+
 
     @Override
     public void choseActions() {
@@ -56,8 +62,6 @@ public abstract class AbstractCalculator implements Calculator {
     protected abstract Object doDivide();
 
     protected abstract void choseFirstCalculatorAction();
-
-//    protected abstract void doGetNumbers();
 
     protected abstract int doSubstraction();
 

@@ -7,7 +7,7 @@ public class Main {
         Calculator calculator = new ConsoleCalculator();
         //задать вопрос сколько будет чисел?
         while (true) {
-            calculator.getFirstNumber();
+            calculator.getNumbers();
         }
     }
 }

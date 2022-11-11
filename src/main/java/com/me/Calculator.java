@@ -2,11 +2,7 @@ package com.me;
 
 public interface Calculator {
 
-//    void getTwoNumbers();
-
-    int getFirstNumber();
-
-    int getSecondNumber();
+    void getNumbers();
 
     void choseActions();
 
