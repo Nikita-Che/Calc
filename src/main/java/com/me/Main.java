@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Calculator calculator = new ConsoleCalculator();
         calculator.sayHello();
-        calculator.getNumbers();
+        //задать вопрос сколько будет чисел?
+        calculator.getTwoNumbers();
     }
 }

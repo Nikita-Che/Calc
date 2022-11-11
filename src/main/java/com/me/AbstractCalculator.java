@@ -12,7 +12,7 @@ package com.me;
 public abstract class AbstractCalculator implements Calculator {
 
     @Override
-    public void getNumbers() {
+    public void getTwoNumbers() {
         doGetNumbers();
     }
 
@@ -20,10 +20,10 @@ public abstract class AbstractCalculator implements Calculator {
 
     @Override
     public void choseActions() {
-        choseCalculatorAction();
+        choseFirstCalculatorAction();
     }
 
-    protected abstract void choseCalculatorAction();
+    protected abstract void choseFirstCalculatorAction();
 
     @Override
     public Object addition() {

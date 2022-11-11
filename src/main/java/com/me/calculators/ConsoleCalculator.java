@@ -15,8 +15,8 @@ public class ConsoleCalculator extends AbstractCalculator {
 
     @Override
     protected void doGetNumbers() {
-        firstNumber = getFirstNumber();
-        secondNumber = getSecondNumber();
+        getFirstNumber();
+        getSecondNumber();
     }
 
     protected int getFirstNumber() {
@@ -32,7 +32,7 @@ public class ConsoleCalculator extends AbstractCalculator {
     }
 
     @Override
-    protected void choseCalculatorAction() {
+    protected void choseFirstCalculatorAction() {
         //запросить от пользователя через консоль знак и добавить проверки на ошибки
         firstAction = "+";
 
